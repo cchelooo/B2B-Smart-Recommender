@@ -1,0 +1,23 @@
+Instalacion de PostgreSQL
+Direccion1(default) => C:\Program Files\PostgreSQL\17
+Direccion2(default) => C:\Program Files\PostgreSQL\17\data
+
+Password => 01j11e
+Puerto => 5432
+
+Configuración regional =>  default
+------------------------
+Consola => SQL Shell (psql)
+Enter - server [localhost]:
+Enter - database [postgres]:
+Enter - port [5432]:
+Enter - username [postgres]:
+01j11e - contraseña para usuario postgres: 
+-------------------------
+Posibles comnados de ejecución en consol de (psql)
+Revisar => \l
+crear BD => create database NAME_BD
+conectarnos => \c NAME_BD
+saber_bd_conectada => \conninfo
+posibles_comandos=> \?
+salir =>\q
