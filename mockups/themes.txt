@@ -1,0 +1,100 @@
+Frutas minimalistas:
+https://www.canva.com/es_es/plantillas/EAE7yy0jTi0-historia-de-instagram-inspiracion-paleta-de-color-frutas-minimalista-naranja/
+
+Cafés:
+https://coolors.co/f7f0f5-decbb7-8f857d-5c5552-433633
+
+/* CSS HEX */ 
+--magnolia: #f7f0f5ff;
+--dun: #decbb7ff;
+--battleship-gray: #8f857dff;
+--walnut-brown: #5c5552ff;
+--van-dyke: #433633ff;
+
+/* CSS HSL */
+--magnolia: hsla(317, 30%, 95%, 1);
+--dun: hsla(31, 37%, 79%, 1);
+--battleship-gray: hsla(27, 7%, 53%, 1);
+--walnut-brown: hsla(18, 6%, 34%, 1);
+--van-dyke: hsla(11, 14%, 23%, 1);
+
+/* SCSS HEX */
+$magnolia: #f7f0f5ff;
+$dun: #decbb7ff;
+$battleship-gray: #8f857dff;
+$walnut-brown: #5c5552ff;
+$van-dyke: #433633ff;
+
+/* SCSS HSL */
+$magnolia: hsla(317, 30%, 95%, 1);
+$dun: hsla(31, 37%, 79%, 1);
+$battleship-gray: hsla(27, 7%, 53%, 1);
+$walnut-brown: hsla(18, 6%, 34%, 1);
+$van-dyke: hsla(11, 14%, 23%, 1);
+
+/* SCSS RGB */
+$magnolia: rgba(247, 240, 245, 1);
+$dun: rgba(222, 203, 183, 1);
+$battleship-gray: rgba(143, 133, 125, 1);
+$walnut-brown: rgba(92, 85, 82, 1);
+$van-dyke: rgba(67, 54, 51, 1);
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #f7f0f5ff, #decbb7ff, #8f857dff, #5c5552ff, #433633ff);
+$gradient-right: linear-gradient(90deg, #f7f0f5ff, #decbb7ff, #8f857dff, #5c5552ff, #433633ff);
+$gradient-bottom: linear-gradient(180deg, #f7f0f5ff, #decbb7ff, #8f857dff, #5c5552ff, #433633ff);
+$gradient-left: linear-gradient(270deg, #f7f0f5ff, #decbb7ff, #8f857dff, #5c5552ff, #433633ff);
+$gradient-top-right: linear-gradient(45deg, #f7f0f5ff, #decbb7ff, #8f857dff, #5c5552ff, #433633ff);
+$gradient-bottom-right: linear-gradient(135deg, #f7f0f5ff, #decbb7ff, #8f857dff, #5c5552ff, #433633ff);
+$gradient-top-left: linear-gradient(225deg, #f7f0f5ff, #decbb7ff, #8f857dff, #5c5552ff, #433633ff);
+$gradient-bottom-left: linear-gradient(315deg, #f7f0f5ff, #decbb7ff, #8f857dff, #5c5552ff, #433633ff);
+$gradient-radial: radial-gradient(#f7f0f5ff, #decbb7ff, #8f857dff, #5c5552ff, #433633ff);
+
+Celestes:
+https://coolors.co/e8e9f3-cecece-a6a6a8-272635-b1e5f2
+
+/* CSS HEX */
+--ghost-white: #e8e9f3ff;
+--silver: #cececeff;
+--french-gray: #a6a6a8ff;
+--raisin-black: #272635ff;
+--non-photo-blue: #b1e5f2ff;
+
+/* CSS HSL */
+--ghost-white: hsla(235, 31%, 93%, 1);
+--silver: hsla(0, 0%, 81%, 1);
+--french-gray: hsla(240, 1%, 65%, 1);
+--raisin-black: hsla(244, 16%, 18%, 1);
+--non-photo-blue: hsla(192, 71%, 82%, 1);
+
+/* SCSS HEX */
+$ghost-white: #e8e9f3ff;
+$silver: #cececeff;
+$french-gray: #a6a6a8ff;
+$raisin-black: #272635ff;
+$non-photo-blue: #b1e5f2ff;
+
+/* SCSS HSL */
+$ghost-white: hsla(235, 31%, 93%, 1);
+$silver: hsla(0, 0%, 81%, 1);
+$french-gray: hsla(240, 1%, 65%, 1);
+$raisin-black: hsla(244, 16%, 18%, 1);
+$non-photo-blue: hsla(192, 71%, 82%, 1);
+
+/* SCSS RGB */
+$ghost-white: rgba(232, 233, 243, 1);
+$silver: rgba(206, 206, 206, 1);
+$french-gray: rgba(166, 166, 168, 1);
+$raisin-black: rgba(39, 38, 53, 1);
+$non-photo-blue: rgba(177, 229, 242, 1);
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #e8e9f3ff, #cececeff, #a6a6a8ff, #272635ff, #b1e5f2ff);
+$gradient-right: linear-gradient(90deg, #e8e9f3ff, #cececeff, #a6a6a8ff, #272635ff, #b1e5f2ff);
+$gradient-bottom: linear-gradient(180deg, #e8e9f3ff, #cececeff, #a6a6a8ff, #272635ff, #b1e5f2ff);
+$gradient-left: linear-gradient(270deg, #e8e9f3ff, #cececeff, #a6a6a8ff, #272635ff, #b1e5f2ff);
+$gradient-top-right: linear-gradient(45deg, #e8e9f3ff, #cececeff, #a6a6a8ff, #272635ff, #b1e5f2ff);
+$gradient-bottom-right: linear-gradient(135deg, #e8e9f3ff, #cececeff, #a6a6a8ff, #272635ff, #b1e5f2ff);
+$gradient-top-left: linear-gradient(225deg, #e8e9f3ff, #cececeff, #a6a6a8ff, #272635ff, #b1e5f2ff);
+$gradient-bottom-left: linear-gradient(315deg, #e8e9f3ff, #cececeff, #a6a6a8ff, #272635ff, #b1e5f2ff);
+$gradient-radial: radial-gradient(#e8e9f3ff, #cececeff, #a6a6a8ff, #272635ff, #b1e5f2ff);
