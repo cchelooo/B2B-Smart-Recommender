@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/5f1fe809-a87c-4456-97af-be1c7f3f1fa7)# B2B-Smart-Recommender
+# B2B-Smart-Recommender
 ## Trabajo realizado
 ![image](https://github.com/user-attachments/assets/a0b8bd46-2b8d-460d-9b79-f7cee91d1122)
 ![image](https://github.com/user-attachments/assets/837f500f-1564-4869-b316-abdfa428c66d)
