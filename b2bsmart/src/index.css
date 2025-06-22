@@ -1,73 +1,29 @@
+@import "tailwindcss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Colores personalizados */
+.bg-ghost-white { background-color: #e8e9f3; }
+.bg-silver { background-color: #cecece; }
+.bg-french-gray { background-color: #a6a6a8; }
+.bg-raisin-black { background-color: #272635; }
+.bg-non-photo-blue { background-color: #b1e5f2; }
 
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+.text-ghost-white { color: #e8e9f3; }
+.text-silver { color: #cecece; }
+.text-french-gray { color: #a6a6a8; }
+.text-raisin-black { color: #272635; }
+.text-non-photo-blue { color: #b1e5f2; }
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Scrollbar estilizada */
+.scrollbar-thin {
+  scrollbar-width: thin;
 }
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+.scrollbar-thumb-silver::-webkit-scrollbar {
+  height: 6px;
 }
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.scrollbar-thumb-silver::-webkit-scrollbar-thumb {
+  background-color: #cecece;
+  border-radius: 6px;
 }
