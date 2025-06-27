@@ -10,10 +10,9 @@ const Navbar = () => {
       setAtTop(window.scrollY === 0);
     };
 
-    // Solo escuchar scroll si estás en el home
     if (location.pathname === "/") {
       window.addEventListener("scroll", handleScroll);
-      handleScroll(); // comprobar al cargar
+      handleScroll();
     }
 
     return () => {
@@ -21,7 +20,6 @@ const Navbar = () => {
     };
   }, [location.pathname]);
 
-  // Aplicar transparencia solo en Home y cuando está arriba
   const isTransparent = location.pathname === "/" && atTop;
 
   return (
@@ -33,18 +31,36 @@ const Navbar = () => {
       }`}
     >
       <h1 className="text-xl font-bold">B2BSmart</h1>
-      <ul className="flex gap-4">
-        <li>
-          <Link to="/" className="hover:text-non-photo-blue">
-            Inicio
-          </Link>
-        </li>
-        <li>
-          <Link to="/carrito" className="hover:text-non-photo-blue">
-            Carrito
-          </Link>
-        </li>
-      </ul>
+
+      <div className="flex items-center gap-8">
+        {/* Links de navegación principales */}
+        <ul className="flex gap-4">
+          <li>
+            <Link to="/" className="hover:text-non-photo-blue">
+              Inicio
+            </Link>
+          </li>
+          <li>
+            <Link to="/carrito" className="hover:text-non-photo-blue">
+              Carrito
+            </Link>
+          </li>
+        </ul>
+
+        {/* Enlaces de autenticación */}
+        <ul className="flex gap-4">
+          <li>
+            <Link to="/login" className="hover:text-non-photo-blue">
+              Ingresar
+            </Link>
+          </li>
+          <li>
+            <Link to="/registro" className="hover:text-non-photo-blue">
+              Crear cuenta
+            </Link>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 };
