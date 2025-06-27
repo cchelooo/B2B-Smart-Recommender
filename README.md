@@ -1,10 +1,28 @@
 # B2B-Smart-Recommender
 ## Trabajo realizado
-![image](https://github.com/user-attachments/assets/a0b8bd46-2b8d-460d-9b79-f7cee91d1122)
-![image](https://github.com/user-attachments/assets/837f500f-1564-4869-b316-abdfa428c66d)
-![image](https://github.com/user-attachments/assets/174b02d2-d4f9-4674-bcfe-8980ecf57e9d)
-![image](https://github.com/user-attachments/assets/cabea6d0-66c3-45bc-8a59-ba015b26cf6d)
+![image](https://github.com/user-attachments/assets/32b8b09b-214b-4631-be82-1dc4b654f565)
+![image](https://github.com/user-attachments/assets/ece8d61d-02ef-454a-b7c8-940d43feb80e)
 
-## Creación del proyecto en React + Tailwind CSS
-![{30FC25B8-4F3D-4A93-B4DC-E388AEE647EB}](https://github.com/user-attachments/assets/b651350f-8069-43ec-be10-1cbc7da15f8e)
 
+# B2BSmart
+
+**B2BSmart** es una aplicación B2B diseñada para empresas que desean optimizar sus compras mediante recomendaciones inteligentes. Analiza el historial de pedidos y perfila cada empresa para ofrecer sugerencias personalizadas, integrando visualizaciones limpias y una interfaz responsiva.
+
+---
+
+## 🛠Tecnologías utilizadas
+
+- **React + Vite** – Framework de desarrollo rápido
+- **Tailwind CSS** – Framework de estilos utility-first con paleta personalizada
+- **React Router DOM** – Ruteo entre páginas (SPA)
+- **Paleta de colores personalizada**:
+
+| Nombre             | Color HEX |
+|--------------------|-----------|
+| `ghost-white`      | `#E8E9F3` |
+| `silver`           | `#CECECE` |
+| `french-gray`      | `#A6A6A8` |
+| `raisin-black`     | `#272635` |
+| `non-photo-blue`   | `#B1E5F2` |
+
+---
