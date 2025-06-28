@@ -20,3 +20,5 @@ class Product(db.Model):
     name = db.Column(db.String, nullable=False)
     category = db.Column(db.String)
     price = db.Column(db.Numeric, nullable=False)
+    image = db.Column(db.String)        
+    description = db.Column(db.String)   
