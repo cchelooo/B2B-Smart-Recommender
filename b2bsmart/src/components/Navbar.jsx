@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useUser } from "../context/UserContext";
 
 const Navbar = () => {
   const [atTop, setAtTop] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const { user, logout } = useUser();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,8 +35,7 @@ const Navbar = () => {
     >
       <h1 className="text-xl font-bold">B2BSmart</h1>
 
-      <div className="flex items-center gap-8">
-        {/* Links de navegación principales */}
+      <div className="flex items-center gap-8 relative">
         <ul className="flex gap-4">
           <li>
             <Link to="/" className="hover:text-non-photo-blue">
@@ -47,19 +49,40 @@ const Navbar = () => {
           </li>
         </ul>
 
-        {/* Enlaces de autenticación */}
-        <ul className="flex gap-4">
-          <li>
-            <Link to="/login" className="hover:text-non-photo-blue">
-              Ingresar
-            </Link>
-          </li>
-          <li>
-            <Link to="/registro" className="hover:text-non-photo-blue">
-              Crear cuenta
-            </Link>
-          </li>
-        </ul>
+        {user ? (
+          <div className="relative">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="font-semibold text-non-photo-blue"
+            >
+              👤 {user.name}
+            </button>
+
+            {menuOpen && (
+              <div className="absolute right-0 mt-2 bg-white text-raisin-black shadow-md rounded px-4 py-2">
+                <button
+                  onClick={logout}
+                  className="hover:text-non-photo-blue transition"
+                >
+                  Cerrar sesión
+                </button>
+              </div>
+            )}
+          </div>
+        ) : (
+          <ul className="flex gap-4">
+            <li>
+              <Link to="/login" className="hover:text-non-photo-blue">
+                Ingresar
+              </Link>
+            </li>
+            <li>
+              <Link to="/registro" className="hover:text-non-photo-blue">
+                Crear cuenta
+              </Link>
+            </li>
+          </ul>
+        )}
       </div>
     </nav>
   );
