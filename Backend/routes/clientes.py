@@ -12,7 +12,8 @@ def get_clients():
         "name": c.name,
         "email": c.email,
         "sector": c.sector,
-        "rol": c.rol
+        "rol": c.rol,
+        "password": c.password
     } for c in clients])
 
 @clientes_bp.route('/', methods=['POST'])
