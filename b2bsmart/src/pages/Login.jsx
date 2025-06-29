@@ -3,8 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useUser } from "../context/UserContext";
 
 const Login = () => {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const { login } = useUser();
 
@@ -17,15 +17,15 @@ const Login = () => {
 
       const match = clients.find(
         (c) =>
-          c.name.toLowerCase() === name.toLowerCase() &&
-          c.email.toLowerCase() === email.toLowerCase()
+          c.email.toLowerCase() === email.toLowerCase() &&
+          c.password === password
       );
 
       if (match) {
-        login(match); // ✅ Guardar en contexto
+        login(match); // Guardar en contexto + localStorage
         navigate("/");
       } else {
-        alert("❌ Usuario o correo incorrecto");
+        alert("❌ Correo o contraseña incorrectos");
       }
     } catch (err) {
       alert("❌ Error de red: " + err.message);
@@ -41,18 +41,20 @@ const Login = () => {
 
         <form className="flex flex-col gap-4" onSubmit={handleLogin}>
           <input
-            type="text"
-            placeholder="Nombre de usuario"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="p-3 rounded bg-silver text-raisin-black"
-          />
-          <input
             type="email"
             placeholder="Correo electrónico"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="p-3 rounded bg-silver text-raisin-black"
+            className="p-3 rounded bg-silver text-raisin-black placeholder:text-french-gray focus:outline-none"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Contraseña"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="p-3 rounded bg-silver text-raisin-black placeholder:text-french-gray focus:outline-none"
+            required
           />
           <button
             type="submit"

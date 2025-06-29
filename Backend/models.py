@@ -12,7 +12,7 @@ class Client(db.Model):
     email = db.Column(db.String, unique=True, nullable=False)
     sector = db.Column(db.String)
     rol = db.Column(db.String, default='cliente')  # Nueva columna agregada
-
+    password = db.Column(db.String, nullable=False)
 
 class Product(db.Model):
     __tablename__ = 'product'

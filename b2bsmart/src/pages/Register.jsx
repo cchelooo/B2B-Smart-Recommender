@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [sector, setSector] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,7 +15,8 @@ const Register = () => {
       name,
       email,
       sector,
-      rol: "cliente", // el backend lo pone por defecto, pero lo incluimos por claridad
+      password,
+      rol: "cliente",
     };
 
     try {
@@ -26,7 +29,12 @@ const Register = () => {
       const data = await res.json();
       if (res.ok) {
         alert("✅ Registro exitoso");
-        // Aquí podrías redirigir al login o guardar sesión
+
+        // Guardar la sesión en localStorage
+        localStorage.setItem("user", JSON.stringify({ name, email }));
+
+        // Redirigir al home
+        navigate("/");
       } else {
         alert("❌ Error: " + (data.error || data.message || "Desconocido"));
       }
@@ -49,6 +57,7 @@ const Register = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="p-3 rounded bg-silver text-raisin-black placeholder:text-french-gray focus:outline-none"
+            required
           />
           <input
             type="email"
@@ -56,6 +65,7 @@ const Register = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="p-3 rounded bg-silver text-raisin-black placeholder:text-french-gray focus:outline-none"
+            required
           />
           <input
             type="text"
@@ -63,6 +73,14 @@ const Register = () => {
             value={sector}
             onChange={(e) => setSector(e.target.value)}
             className="p-3 rounded bg-silver text-raisin-black placeholder:text-french-gray focus:outline-none"
+          />
+          <input
+            type="password"
+            placeholder="Contraseña"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="p-3 rounded bg-silver text-raisin-black placeholder:text-french-gray focus:outline-none"
+            required
           />
           <button
             type="submit"

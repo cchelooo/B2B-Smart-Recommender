@@ -12,7 +12,8 @@ def get_clients():
         "name": c.name,
         "email": c.email,
         "sector": c.sector,
-        "rol": c.rol
+        "rol": c.rol,
+        "password": c.password
     } for c in clients])
 
 @clientes_bp.route('/', methods=['POST'])
@@ -22,7 +23,8 @@ def add_client():
         name=data['name'],
         email=data['email'],
         sector=data.get('sector'),
-        rol=data.get('rol', 'cliente')
+        rol=data.get('rol', 'cliente'),
+        password=data['password']
     )
     db.session.add(client)
     db.session.commit()
