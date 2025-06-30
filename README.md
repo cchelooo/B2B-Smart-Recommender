@@ -1,7 +1,10 @@
 # B2B-Smart-Recommender
 ## Trabajo realizado
-![image](https://github.com/user-attachments/assets/32b8b09b-214b-4631-be82-1dc4b654f565)
-![image](https://github.com/user-attachments/assets/ece8d61d-02ef-454a-b7c8-940d43feb80e)
+![image](https://github.com/user-attachments/assets/891835ae-a383-4d66-9c19-6047a86a5da0)
+![image](https://github.com/user-attachments/assets/090d5809-c219-4de6-bdf8-ee58d48d228f)
+![image](https://github.com/user-attachments/assets/ddc534f2-c1bb-4421-9f16-5e2594820b2a)
+
+
 
 
 # B2BSmart
