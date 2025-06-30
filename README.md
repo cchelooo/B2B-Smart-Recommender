@@ -52,7 +52,7 @@ Backend/
 
 Datos registrados del client
 
-![alt text](Parte_del_backend\assets\json.png)
+![alt text](Parte_del_backend/assets/json.png)
 
 
 ## Supabase 
@@ -63,11 +63,11 @@ En nuestras BD la tabla `client` y `product` se le insertaron datos, mediante la
 
 Acá se muestra los datos insertados en la BD, esta tiene un campo que almacena la ruta de la imagen en una carpeta de `Store` de supabase.
 
-![alt text](Parte_del_backend\assets\DATAproduct.png)
+![alt text](Parte_del_backend/assets/DATAproduct.png)
 
 ### Base de datos - Storage (productos)
 ![alt text](image.png)
 
 ### Como resultado de Backend(API) + Fronted
 
-![alt text](Parte_del_backend\assets\web.png)
+![alt text](Parte_del_backend/assets/web.png)
