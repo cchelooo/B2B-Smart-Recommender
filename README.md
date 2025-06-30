@@ -4,8 +4,15 @@ Backend
 Flask. 
 - Gestión de la base de datos en 
 PostgreSQL. 
+- Insertar datos en la BD
+- Integración de 
+recomendaciones en frontend 
+- Tests iniciales y 
+ajustes  
 
 > Semana3: Backend básico (API para productos y clientes) 
+
+> Semana4: Integración de recomendaciones en frontend -  Mejoras de api.
 
 ## INFO del proyecto:
 Estructura general del proyecto →
@@ -15,7 +22,7 @@ Estructura general del proyecto →
 /Parte_del-backend     <-- Arch posteriores
 ```
 
-### 🧪 Backend en desarrollo
+###  Backend en desarrollo - API (Flask)
 
 En este proyecto trabajamos con **Flask** para crear una API básica de productos y clientes.
 
@@ -43,5 +50,24 @@ Backend/
 ```
 ### Captura de funcionamiento de API
 
-<img src="Parte_del_backend/assets/Captura de pantalla 2025-06-22 203715.png" alt="Tablas Supabase" style="max-width: 100%; height: auto;" />
-<p><i>JSON - Datos registrados del client</i></p>
+Datos registrados del client
+
+![alt text](Parte_del_backend\assets\json.png)
+
+
+## Supabase 
+
+### Base de datos - productos
+
+En nuestras BD la tabla `client` y `product` se le insertaron datos, mediante la `API`.
+
+Acá se muestra los datos insertados en la BD, esta tiene un campo que almacena la ruta de la imagen en una carpeta de `Store` de supabase.
+
+![alt text](Parte_del_backend\assets\DATAproduct.png)
+
+### Base de datos - Storage (productos)
+![alt text](image.png)
+
+### Como resultado de Backend(API) + Fronted
+
+![alt text](Parte_del_backend\assets\web.png)
