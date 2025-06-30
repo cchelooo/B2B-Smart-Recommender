@@ -1,4 +1,5 @@
 from flask import Blueprint, request, jsonify
+from supabase_conn import SUPABASE_PUBLIC_URL
 from models import Product
 from db import db
 from supabase_conn import supabase
@@ -24,32 +25,33 @@ def add_product():
         # Obtener datos del formulario
         name = request.form.get('name')
         category = request.form.get('category')
-        price = request.form.get('price')
+        price_raw = request.form.get('price')
         description = request.form.get('description')
         image_file = request.files.get('image')
 
-        # Validar campos obligatorios
-        if not all([name, price, image_file]):
+        if not all([name, price_raw, image_file]):
             return jsonify({"error": "Campos requeridos incompletos"}), 400
 
-        # Preparar datos para subir imagen a Supabase Storage
+        try:
+            price = float(price_raw)
+        except ValueError:
+            return jsonify({"error": "El precio debe ser un número válido"}), 400
+
         file_ext = image_file.filename.split('.')[-1]
         file_path = f"products/{uuid.uuid4()}.{file_ext}"
         file_data = image_file.read()
 
-        # Subir imagen
-        upload_response = supabase.storage.from_('product-images').upload(
-            file_path, file_data, {"content-type": image_file.content_type}
-        )
+        # Subir imagen a Supabase
+        try:
+            supabase.storage.from_('product-images').upload(
+                file_path, file_data, {"content-type": image_file.content_type}
+            )
+        except Exception as upload_err:
+            return jsonify({"error": f"Error al subir imagen: {str(upload_err)}"}), 500
 
-        # Verificar error en subida
-        if upload_response.error:
-            return jsonify({"error": "Error al subir imagen: " + str(upload_response.error)}), 500
+        # URL pública
+        image_url = f"{SUPABASE_PUBLIC_URL}/storage/v1/object/public/product-images/{file_path}"
 
-        # Construir URL pública de la imagen
-        image_url = f"{supabase.storage.url}/object/public/product-images/{file_path}"
-
-        # Crear nuevo producto en base de datos
         product = Product(
             name=name,
             category=category,
@@ -64,4 +66,4 @@ def add_product():
         return jsonify({"message": "Producto agregado", "id_product": str(product.id_product)}), 201
 
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"error": f"Error inesperado: {str(e)}"}), 500

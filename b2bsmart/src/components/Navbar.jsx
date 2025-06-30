@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useUser } from "../context/UserContext";
 
 const Navbar = () => {
   const [atTop, setAtTop] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const { user, logout } = useUser();
 
   useEffect(() => {
@@ -23,34 +24,46 @@ const Navbar = () => {
     };
   }, [location.pathname]);
 
-  const isTransparent = location.pathname === "/" && atTop;
+  const isHome = location.pathname === "/";
+  const isTransparent = isHome && atTop;
+
+  // Contador del carrito
+  const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     <nav
-      className={`sticky top-0 z-50 px-6 py-4 flex justify-between items-center shadow transition-all duration-300 ${
+      className={`fixed top-0 z-50 w-full px-6 py-4 flex justify-between items-center transition-all duration-300 ${
         isTransparent
           ? "bg-transparent text-raisin-black"
-          : "bg-raisin-black text-ghost-white"
+          : "bg-raisin-black text-ghost-white shadow"
       }`}
     >
-      <h1 className="text-xl font-bold">B2BSmart</h1>
+      {/* Menú ☰ y logo */}
+      <div
+        className="flex items-center gap-2 cursor-pointer"
+        onClick={() => navigate("/")}
+      >
+        <span className="text-2xl">☰</span>
+        <span className="font-bold text-lg hover:text-non-photo-blue transition">
+          B2BSmart
+        </span>
+      </div>
 
-      <div className="flex items-center gap-8 relative">
-        <ul className="flex gap-4">
-          <li>
-            <Link to="/" className="hover:text-non-photo-blue">
-              Inicio
-            </Link>
-          </li>
-          <li>
-            <Link to="/carrito" className="hover:text-non-photo-blue">
-              Carrito
-            </Link>
-          </li>
-        </ul>
+      {/* Buscador */}
+      <div className="w-1/2">
+        <input
+          type="text"
+          placeholder="Buscar productos..."
+          className="w-full px-4 py-2 rounded-lg border border-silver bg-white text-raisin-black focus:outline-none focus:ring-2 focus:ring-non-photo-blue"
+        />
+      </div>
 
+      {/* Usuario y carrito */}
+      <div className="flex items-center gap-4 relative">
         {user ? (
-          <div className="relative">
+          <div className="flex items-center gap-3">
+            {/* Nombre de usuario */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="font-semibold text-non-photo-blue"
@@ -58,8 +71,14 @@ const Navbar = () => {
               👤 {user.name}
             </button>
 
+            {/* Carrito */}
+            <Link to="/carrito" className="hover:text-non-photo-blue text-lg">
+              🛒({cartCount})
+            </Link>
+
+            {/* Menú desplegable */}
             {menuOpen && (
-              <div className="absolute right-0 mt-2 bg-white text-raisin-black shadow-md rounded px-4 py-2">
+              <div className="absolute right-0 mt-10 bg-white text-raisin-black shadow-md rounded px-4 py-2">
                 <button
                   onClick={logout}
                   className="hover:text-non-photo-blue transition"
