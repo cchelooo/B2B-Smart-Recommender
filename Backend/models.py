@@ -32,3 +32,12 @@ class PurchaseHistory(db.Model):
     date_time = db.Column(db.DateTime, default=datetime.utcnow)
     client = db.relationship('Client', backref='purchases')   # FK de client
     product = db.relationship('Product', backref='purchases') # FK de product
+class Recommendation(db.Model):
+    __tablename__ = 'recommendation'
+    id_r = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    id_user = db.Column(UUID(as_uuid=True), db.ForeignKey('client.id_user'), nullable=False)
+    id_product = db.Column(UUID(as_uuid=True), db.ForeignKey('product.id_product'), nullable=False)
+    score = db.Column(db.Numeric)
+    
+    client = db.relationship('Client', backref='recommendations')
+    product = db.relationship('Product', backref='recommendations')
