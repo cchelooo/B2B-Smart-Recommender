@@ -24,7 +24,7 @@ def add_client():
         email=data['email'],
         sector=data.get('sector'),
         rol=data.get('rol', 'cliente'),
-        password=data['password']
+        password=data['password'] 
     )
     db.session.add(client)
     db.session.commit()
