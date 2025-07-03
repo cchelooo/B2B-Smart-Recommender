@@ -21,7 +21,8 @@ def get_history():
             "product": {
                 "id_product": str(h.product.id_product),
                 "name": h.product.name,
-                "price": float(h.product.price)
+                "price": float(h.product.price),
+                "image": h.product.image
             },
             "quantity": h.quantity,
             "date_time": h.date_time.strftime('%Y-%m-%d %H:%M:%S')
@@ -49,3 +50,10 @@ def add_history():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 400
+# DELETE: Eliminar una compra del historial por ID
+@history_bp.route('/<uuid:id_history>', methods=['DELETE'])
+def delete_history(id_history):
+    history_item = PurchaseHistory.query.get_or_404(id_history)
+    db.session.delete(history_item)
+    db.session.commit()
+    return jsonify({"message": f"Compra {id_history} eliminada del historial"}), 200
