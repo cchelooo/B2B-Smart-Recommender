@@ -5,6 +5,7 @@ import Cart from "../pages/Cart";
 import Home from "../pages/Home";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import Search from "../pages/Search";
 
 const AppRouter = () => {
   return (
@@ -15,13 +16,13 @@ const AppRouter = () => {
         <Route path="/carrito" element={<CartWithLayout />} />
         <Route path="/registro" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/buscar" element={<Search />} />
       </Routes>
       <Footer />
     </Router>
   );
 };
 
-// Layout con altura completa solo para carrito
 const CartWithLayout = () => {
   return (
     <div className="flex flex-col h-screen">
