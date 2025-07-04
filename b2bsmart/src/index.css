@@ -15,3 +15,29 @@
 .text-french-gray { color: #a6a6a8; }
 .text-raisin-black { color: #272635; }
 .text-non-photo-blue { color: #b1e5f2; }
+
+/* Scrollbar estilizada */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+.scrollbar-thumb-silver::-webkit-scrollbar {
+  height: 6px;
+}
+.scrollbar-thumb-silver::-webkit-scrollbar-thumb {
+  background-color: #cecece;
+  border-radius: 6px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spinner {
+  border: 6px solid #cecece;
+  border-top-color: #272635;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}

@@ -1,0 +1,49 @@
+Diagrama de Casos de Uso
+
+Actores:
+Cliente
+Administrador
+
+Casos de Uso del Cliente:
+Ver Recomendaciones: El cliente puede visualizar productos sugeridos según su historial de compras.
+Explorar Productos: El cliente puede navegar entre diferentes categorías de productos recomendados.
+Filtrar Sugerencias: El cliente puede refinar las recomendaciones por criterios como precio o categoría.
+
+Casos de Uso del Administrador:
+Configurar Algoritmos: El administrador puede modificar los parámetros de los modelos de recomendación.
+Ver Métricas de Efectividad: El administrador puede revisar estadísticas sobre precisión y conversiones.
+
+--------------------------------------------------------------------------------------------------------
+Modelo de Datos (Entidad-Relación)
+
+Entidad: Cliente
+id: int (PK)
+nombre: varchar
+email: varchar
+sector: varchar
+
+Entidad: Producto
+id: int (PK)
+nombre: varchar
+categoría: varchar
+precio: float
+
+Entidad: Historial_Compra
+id: int (PK)
+cliente_id: int (FK)
+producto_id: int (FK)
+cantidad: int
+fecha: datetime
+
+Entidad: Recomendación
+id: int (PK)
+cliente_id: int (FK)
+producto_id: int (FK)
+score: float
+
+Relaciones:
+Un cliente registra un historial de compras.
+Un historial de compras registra productos adquiridos por clientes.
+Un producto puede ser vendido y aparecer en el historial.
+Una recomendación sugiere productos a un cliente con un score (puntaje de relevancia).
+

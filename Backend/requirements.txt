@@ -1,0 +1,6 @@
+# Dependecias (Flask, SQLAlchemy, psycopg2, etc)
+Flask
+Flask-SQLAlchemy
+psycopg2-binary
+python-dotenv
+supabase-py
