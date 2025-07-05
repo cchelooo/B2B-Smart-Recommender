@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { getProducts } from "../services/productService";
 import ProductModal from "../components/ProductModal";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 const Search = () => {
   const [products, setProducts] = useState([]);
