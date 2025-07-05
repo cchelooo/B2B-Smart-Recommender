@@ -20,7 +20,7 @@ const Register = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:5000/clientes/", {
+      const res = await fetch(`${BACKEND_URL}/clientes/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

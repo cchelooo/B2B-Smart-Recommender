@@ -1,6 +1,8 @@
+const BASE_URL = import.meta.env.VITE_BACKEND_URL;
+
 export const getProducts = async () => {
   try {
-    const response = await fetch("http://localhost:5000/productos/");
+    const response = await fetch(`${BASE_URL}/productos/`);
     if (!response.ok) throw new Error("Error al obtener productos");
     return await response.json();
   } catch (error) {

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Trash2 } from "lucide-react";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -43,7 +44,7 @@ const Cart = () => {
 
     try {
       for (const item of cartItems) {
-        await fetch("http://localhost:5000/history/", {
+        await fetch(`${BACKEND_URL}/history/`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -79,7 +80,7 @@ const Cart = () => {
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
     if (user?.id_user) {
-      fetch("http://localhost:5000/history/")
+      fetch(`${BACKEND_URL}/history/`)
         .then((res) => res.json())
         .then((data) => {
           const comprasUsuario = data
@@ -104,9 +105,7 @@ const Cart = () => {
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
     if (user?.id_user) {
-      fetch(
-        `http://localhost:5000/api/recomendacion/personalizadas/${user.id_user}`
-      )
+      fetch(`${BACKEND_URL}/api/recomendacion/personalizadas/${user.id_user}`)
         .then((res) => res.json())
         .then((data) => {
           const recomendaciones = data.map((item) => ({
@@ -163,7 +162,7 @@ const Cart = () => {
     setShowDeleteModal(false);
 
     try {
-      await fetch(`http://localhost:5000/history/${pendingDeleteId}`, {
+      await fetch(`${BACKEND_URL}/history/${pendingDeleteId}`, {
         method: "DELETE",
       });
 

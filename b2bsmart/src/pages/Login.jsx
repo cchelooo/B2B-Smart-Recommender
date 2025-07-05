@@ -12,7 +12,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5000/clientes/");
+      const res = await fetch(`${BACKEND_URL}/clientes/`);
       const clients = await res.json();
 
       const match = clients.find(
