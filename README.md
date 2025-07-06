@@ -1,31 +1,84 @@
-# B2B-Smart-Recommender
-## Trabajo realizado
-![image](https://github.com/user-attachments/assets/891835ae-a383-4d66-9c19-6047a86a5da0)
-![image](https://github.com/user-attachments/assets/090d5809-c219-4de6-bdf8-ee58d48d228f)
-![image](https://github.com/user-attachments/assets/ddc534f2-c1bb-4421-9f16-5e2594820b2a)
-
-
-
-
 # B2BSmart
 
-**B2BSmart** es una aplicación B2B diseñada para empresas que desean optimizar sus compras mediante recomendaciones inteligentes. Analiza el historial de pedidos y perfila cada empresa para ofrecer sugerencias personalizadas, integrando visualizaciones limpias y una interfaz responsiva.
+**B2BSmart** es una aplicación web B2B diseñada para que empresas optimicen sus procesos de compra mediante un sistema de recomendaciones inteligentes basado en historial de compras y perfiles de usuario. La plataforma ofrece una interfaz limpia, responsiva y moderna, pensada para mejorar la eficiencia y la experiencia del usuario empresarial.
 
 ---
 
-## 🛠Tecnologías utilizadas
+## Funcionalidades principales
 
-- **React + Vite** – Framework de desarrollo rápido
-- **Tailwind CSS** – Framework de estilos utility-first con paleta personalizada
-- **React Router DOM** – Ruteo entre páginas (SPA)
-- **Paleta de colores personalizada**:
-
-| Nombre             | Color HEX |
-|--------------------|-----------|
-| `ghost-white`      | `#E8E9F3` |
-| `silver`           | `#CECECE` |
-| `french-gray`      | `#A6A6A8` |
-| `raisin-black`     | `#272635` |
-| `non-photo-blue`   | `#B1E5F2` |
+- **Búsqueda de productos** por nombre o categoría.
+- **Carrito de compras** interactivo, con historial y recomendaciones personalizadas.
+- **Recomendaciones inteligentes** mediante machine learning (TF-IDF + preferencias de categoría).
+- **Gestión de historial de compras** con posibilidad de eliminar registros.
+- **Inicio de sesión y registro de clientes**.
+- **Dashboard empresarial** enfocado en experiencia B2B.
 
 ---
+
+## Tecnologías utilizadas
+
+### Frontend
+
+- **React** + **Vite**  
+- **Tailwind CSS** (estilos personalizados con paleta de colores definida)
+- **Lucide React** (íconos modernos)
+- **React Router Dom** (navegación SPA)
+- **Vercel** (despliegue frontend)
+
+### Backend
+
+- **Flask** (API RESTful)
+- **SQLAlchemy** (ORM para PostgreSQL)
+- **Supabase** (alternativa a Firebase, utilizada inicialmente)
+- **Fly.io** (despliegue del backend)
+- **Flask-CORS** (para habilitar comunicación con frontend)
+- **dotenv** (manejo seguro de variables de entorno)
+
+### Recomendaciones inteligentes
+
+- **Pandas** + **Scikit-Learn**  
+- **TF-IDF Vectorizer** para analizar descripciones de productos.
+- Análisis de **historial de compras** para priorizar categorías.
+
+---
+
+## Lógica de recomendación
+
+1. Si el usuario no tiene historial, se recomiendan productos variados.
+2. Si hay historial, se ponderan productos según:
+   - Frecuencia de compra por categoría.
+   - Similitud de descripción mediante TF-IDF.
+3. Se combinan ambos factores para sugerir hasta 6 productos personalizados.
+
+---
+
+## Base de datos
+
+- **PostgreSQL** alojado en Fly.io
+- Tablas:
+  - `Client`
+  - `Product`
+  - `PurchaseHistory`
+- Uso de `UUID` como identificadores principales.
+- Relaciones `1:N` entre clientes y compras.
+
+---
+
+## Diseño e interfaz
+
+- Layout responsivo y moderno.
+- Modales animados para historial, carrito y confirmaciones.
+- Carga condicional con indicadores (`loading`, `success`, etc.).
+- Paleta de colores personalizada:
+  - `ghost-white`, `silver`, `french-gray`, `raisin-black`, `non-photo blue`.
+
+---
+
+### Backend
+
+```bash
+cd Backend
+python -m venv venv
+source venv/bin/activate  # o venv\Scripts\activate en Windows
+pip install -r requirements.txt
+python app.py
