@@ -73,8 +73,7 @@
   - `ghost-white`, `silver`, `french-gray`, `raisin-black`, `non-photo blue`.
 
 ![image](https://github.com/user-attachments/assets/d63361ed-f882-42ad-be5c-32bbc50e52f2)
-![image](https://github.com/user-attachments/assets/751bf90b-2859-4ee4-8b8d-8047ae6d4f54)
-
+![image](https://github.com/user-attachments/assets/9e4f4bea-d407-492c-9edd-e3c511a971bf)
 
 ---
 
